@@ -1,0 +1,25 @@
+.search_bar {
+  z-index: 1;
+  list-style-type: none;
+  margin: 0%;
+  padding: 0%;
+  height: 5vh;
+  display: flex;
+  width: 100%;
+  background-color: transparent; }
+  .search_bar li {
+    flex: 1;
+    display: block;
+    flex-direction: row; }
+
+.zero_1_style {
+  z-index: -20;
+  font-size: 50rem;
+  color: #3d1c39;
+  writing-mode: vertical-lr;
+  text-orientation: use-glyph-orientation; }
+
+.background {
+  background: linear-gradient(90deg, #250324 0 45%, #ff592f 45% 100%);
+  width: 100%;
+  height: 100vh; }
