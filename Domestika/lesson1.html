@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Coding</title>
+</head>
+<body>
+ 
+  <style>
+    canvas{
+      position: absolute;
+      top:0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin:auto;
+    }
+  </style>
+  <canvas width="600" height="600"></canvas>
+  <script>
+    let canvas = document.querySelector('canvas');
+    let context = canvas.getContext('2d');
+    
+   // context.fillStyle = 'blue';
+   // context.fillRect(100, 100, 400, 400); //fill the context with color start x, start y, distance x ,distance y 
+    
+   //Draw Rectangle
+    context.lineWidth = 4;
+    context.beginPath(); //start drawing
+    context.rect(100, 100, 400, 400);
+    // context.stroke(); //commemted out to stop drawing
+
+    //Draw Circle
+    context.beginPath();
+    context.arc( 300, 300, 100, 0, Math.PI*2); //takes in start x , y radius, start angle end angle using radians
+    // context.stroke(); //commemted out to stop drawing
+
+    //start of creative coding using loops
+    let width = 50;
+    let height = 50;
+    let gap = 20;
+    let x , y ;
+    for( i=0 ; i < 5 ; i++ ){
+      for (let j = 0; j < 5; j++) {
+        x = 100 + (width + gap) * i; //start point x changes with value of i
+        y = 100 + (height + gap) * j; // start point y changes with value of j
+        
+        if(Math.random() > 0.5 ) {
+        context.beginPath();
+        context.rect(x + 8, y + 8,  (width - 16)*i ,(height - 16)*j);
+        context.stroke();
+        }
+        context.beginPath();
+        context.rect(x , y , width , height);
+        context.stroke();
+
+      }
+    }
+
+  </script>
+</body>
+</html>
